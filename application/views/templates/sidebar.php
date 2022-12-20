@@ -37,11 +37,12 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Car Types:</h6>
+                    <?php $i = 1; ?>
                     <a class="collapse-item" href="#">Best Seller</a>
-                    <a class="collapse-item" href="#">MPV</a>
-                    <a class="collapse-item" href="#">Hatchback</a>
-                    <a class="collapse-item" href="#">SUV</a>
-                    <a class="collapse-item" href="#">Sedan</a>
+                    <?php foreach ($types as $t) : ?>
+                        <a class="collapse-item" href="#"><?= $t['name'] ?></a>
+                        <?php $i++ ?>
+                    <?php endforeach ?>
                 </div>
             </div>
         </li>
@@ -61,16 +62,27 @@
             Admin
         </div>
 
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item - Users -->
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('admin/users') ?>">
                 <span>Users</span></a>
         </li>
 
-        <!-- Nav Item - Tables -->
+        <!-- Nav Item - Cars -->
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('admin/cars') ?>">
                 <span>Cars</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Logout -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('auth/logout') ?>" data-toggle="modal" data-target="#logoutModal">
+                <i class="fas fa-fw fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
         </li>
 
         <!-- Divider -->

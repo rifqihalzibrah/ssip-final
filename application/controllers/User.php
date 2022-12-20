@@ -6,10 +6,12 @@ class User extends CI_Controller
 
     public function index()
     {
+        $data['cars'] = $this->db->get('cars')->result_array();
+
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
-        $this->load->view('dashboard');
+        $this->load->view('dashboard', $data);
         $this->load->view('templates/footer');
     }
 

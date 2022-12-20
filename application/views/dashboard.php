@@ -8,75 +8,33 @@
         <div class="row">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="<?= base_url('assets/') ?>img/sample3.png" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body text-dark">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-
-                                        <a href="#" class="btn btn-outline-primary btn-sm">
-                                            Card link
-                                        </a>
+                    <?php $i = 1 ?>
+                    <?php foreach ($cars as $c) :  ?>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-md-6">
+                                        <img src="<?= base_url('assets/img/') ?><?= $c['image'] ?>" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-6 d-flex align-items-center">
+                                        <div class="card-body text-dark">
+                                            <h3 class="card-title text-center"><?= $c['name'] ?></h3>
+                                            <h5 class="card-text text-center">
+                                                <?= $c['price'] ?>
+                                            </h5>
+                                            <p class="text-center">
+                                                <a href="#" class="btn btn-outline-primary btn-sm button-center mt-3">
+                                                    Card link
+                                                </a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="<?= base_url('assets/') ?>img/sample3.png" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body text-dark">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
+                        <?php $i++ ?>
+                    <?php endforeach ?>
 
-                                        <a href="#" class="btn btn-outline-primary btn-sm">
-                                            Card link
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="<?= base_url('assets/') ?>img/sample3.png" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body text-dark">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </p>
-
-                                        <a href="#" class="btn btn-outline-primary btn-sm">
-                                            Card link
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
